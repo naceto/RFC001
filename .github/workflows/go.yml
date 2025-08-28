@@ -28,6 +28,9 @@ jobs:
   release:
     needs: build
     runs-on: ubuntu-latest
+    permissions:
+      contents: write      # For pushing tags
+      issues: write        # For creating issues
     steps:
       - name: Checkout
         uses: actions/checkout@v5
@@ -35,3 +38,4 @@ jobs:
         uses: codfish/semantic-release-action@v2.0.0
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
