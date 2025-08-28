@@ -3,3 +3,7 @@ branches:
   - name: "1.x"
 
 repositoryUrl: 'https://github.com/naceto/RFC001.git'
+
+plugins:
+  - "@semantic-release/npm"
+    npmPublish: false
