@@ -5,5 +5,5 @@ branches:
 repositoryUrl: 'https://github.com/naceto/RFC001.git'
 
 plugins:
-  - "@semantic-release/npm"
-    npmPublish: false
+- - "@semantic-release/npm"
+  - npmPublish: false
