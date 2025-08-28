@@ -7,11 +7,11 @@ on:
   push:
     branches:
       - main
-      - 'v[0-9]+'
+      - 'v[0-9]+.x'
   pull_request:
     branches:
       - main
-      - 'v[0-9]+'
+      - 'v[0-9]+.x'
 
 jobs:
   build:
@@ -45,18 +45,4 @@ jobs:
       - name: Run go-semantic-release
         uses: go-semantic-release/action@v1
         with:
-          provider: github
           github-token: ${{ secrets.GITHUB_TOKEN }}
-
-
-
-
-
-
-
-
-
-
-
-
-
