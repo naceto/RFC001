@@ -35,9 +35,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0
+
+      - name: Check semrelrc file
+        run: cat .semrelrc
 
       - name: Run go-semantic-release
         uses: go-semantic-release/action@v1
