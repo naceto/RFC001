@@ -1,0 +1,6 @@
+{
+  "branches": [
+    "main",
+    {"name": "v[0-9]+", "regex": true}
+  ]
+}
