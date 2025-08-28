@@ -1,6 +1,6 @@
 {
   "branches": [
     "main",
-    { "name": "v[0-9]+", "prerelease": false }
+    { "regex": "v[0-9]+", "prerelease": false }
   ]
 }
