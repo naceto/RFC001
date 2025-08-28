@@ -2,11 +2,5 @@
   "branches": [
     "main",
     { "name": "v[0-9]+", "prerelease": false }
-  ],
-  "plugins": [
-    "commit-analyzer",
-    "changelog",
-    "github",
-    "git"
   ]
 }
