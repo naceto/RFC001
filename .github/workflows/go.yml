@@ -6,12 +6,10 @@ name: Go
 on:
   push:
     branches:
-      - main
-      - 'v[0-9]+.x'
+      - **
   pull_request:
     branches:
-      - main
-      - 'v[0-9]+.x'
+      - **
 
 jobs:
   build:
@@ -30,19 +28,25 @@ jobs:
       - name: Test
         run: go test -v ./...
   release:
-    if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/heads/v'))
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v5
-        with:
-          fetch-depth: 0
+      - name: Semantic Release
+        uses: cycjimmy/semantic-release-action@v4
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: Check semrelrc file
-        run: cat .semrelrc
 
-      - name: Run go-semantic-release
-        uses: go-semantic-release/action@v1
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+
+
+
+
+
+
+
+
+
