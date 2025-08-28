@@ -1,9 +1,6 @@
 {
   "branches": [
-    // Latest development branch (always the newest major)
     "main",
-
-    // Any maintenance branch like v1, v2, v3, ...
     { "name": "v[0-9]+", "prerelease": false }
   ],
   "plugins": [
