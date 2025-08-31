@@ -1,7 +1,7 @@
 branches:
   - name: "main"
   - name: "v1.x"
-    range: "v1.x"
+    range: "1.x"
 
 repositoryUrl: 'https://github.com/naceto/RFC001.git'
 
