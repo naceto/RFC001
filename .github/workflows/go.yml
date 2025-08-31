@@ -35,7 +35,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v5
       - name: Release
-        uses: codfish/semantic-release-action@v2.0.0
+        uses: codfish/semantic-release-action@v4.0.0
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
