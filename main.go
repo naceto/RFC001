@@ -6,4 +6,6 @@ func main() {
 	fmt.Println("Hello, World!")
 	fmt.Println("This is a sample Go program.")
 	fmt.Println("This is a breaking change.")
+
+	fmt.Println("This is another breaking change.")
 }
