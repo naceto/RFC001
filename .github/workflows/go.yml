@@ -31,14 +31,11 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event_name == 'pull_request'
     steps:
-      - name: Set branch env
-        run: echo "GITHUB_REF_NAME=${{ github.event.pull_request.base.ref }}" >> $GITHUB_ENV
-      - name: Lint PR title
-        uses: wagoid/commitlint-github-action@v6
-        with:
-          configFile: commitlint.config.js
-          commitMessage: ${{ github.event.pull_request.title }}
-          failOnWarnings: true
+      - uses: actions/checkout@v5
+      - run: npm install @commitlint/{config-conventional,cli}
+      - run: echo "${{ github.event.pull_request.title }}" | npx commitlint --config commitlint.config.js
+        env:
+          GITHUB_REF_NAME: ${{ github.event.pull_request.base.ref }}
 
   release:
     if: github.event_name == 'push'
